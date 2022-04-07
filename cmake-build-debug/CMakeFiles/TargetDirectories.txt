@@ -1,0 +1,3 @@
+/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/DA_T1_G119.dir

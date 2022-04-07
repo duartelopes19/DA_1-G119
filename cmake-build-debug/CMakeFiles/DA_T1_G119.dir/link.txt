@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/DA_T1_G119.dir/main.cpp.o CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o  -o DA_T1_G119 

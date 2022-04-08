@@ -8,14 +8,6 @@
 
 /mnt/c/FEUP/DA/DA_T1_G119/Carrinha.h
 
-/mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp
-fstream
--
-Empresa.h
-/mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
-iostream
--
-
 /mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
 Encomenda.h
 /mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h
@@ -25,6 +17,14 @@ vector
 -
 string
 -
+fstream
+-
 
 /mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h
+
+/mnt/c/FEUP/DA/DA_T1_G119/main.cpp
+iostream
+-
+Empresa.h
+/mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
 

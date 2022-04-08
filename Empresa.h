@@ -10,6 +10,7 @@
 #include "Carrinha.h"
 #include <vector>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -21,6 +22,9 @@ public:
     Empresa();
     void addCarrinhas(string file);
     void addEncomendas(string file);
+    void otimizarNumeroEstafetas();
+    void otimizarLucro();
+    void otimizarEntregasExpresso();
 };
 
 

@@ -49,13 +49,27 @@ void Empresa::addEncomendas(string file) {
 }
 
 void Empresa::otimizarNumeroEstafetas() {
-    std::sort(carrinhas.begin(), carrinhas.end());
-    std::sort(encomendas.begin(), encomendas.end());
-    std::reverse(carrinhas.begin(), carrinhas.end());
+
+    map<int,Carrinha> mCarrinhas;
+    for(Carrinha carrinha : carrinhas) {
+        int a = 0-(carrinha.getPesoMax()*carrinha.getVolMax());
+        mCarrinhas.insert(pair(a,carrinha));
+    }
+
+    map<int,Encomenda> mEncomendas;
+    for(Encomenda encomenda : encomendas) {
+        int a = encomenda.getVolume()*encomenda.getPeso();
+        mEncomendas.insert(pair(a,encomenda));
+    }
 
     queue<Encomenda> qEncomendas;
-    for(Encomenda encomenda : encomendas) {
-        qEncomendas.push(encomenda);
+    for(auto encomenda : mEncomendas) {
+        qEncomendas.push(encomenda.second);
+    }
+
+    vector<Carrinha> estafetas;
+    for(auto carrinha : mCarrinhas) {
+        estafetas.push_back(carrinha.second);
     }
 
     int carrinhasUsadas = 0;

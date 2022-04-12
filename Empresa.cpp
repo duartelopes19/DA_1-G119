@@ -80,7 +80,7 @@ void Empresa::otimizarNumeroEstafetas() {
 
     int carrinhasUsadas = 0;
     int encomendasCarregadas;
-    for(Carrinha carrinha : carrinhas) {
+    for(Carrinha carrinha : estafetas) {
         carrinhasUsadas++;
         encomendasCarregadas = 0;
         while((carrinha.getVolMax()!=0 || carrinha.getPesoMax()!=0) && !qEncomendas.empty())  {
@@ -132,7 +132,7 @@ void Empresa::otimizarLucro() {
     int carrinhasUsadas = 0;
     int encomendasCarregadas;
     int ganhos, despesas = 0;
-    for(Carrinha carrinha : carrinhas) {
+    for(Carrinha carrinha : estafetas) {
         carrinhasUsadas++;
         encomendasCarregadas = 0;
         despesas += carrinha.getCusto();

@@ -53,12 +53,18 @@ void Empresa::otimizarNumeroEstafetas() {
     map<int,Carrinha> mCarrinhas;
     for(Carrinha carrinha : carrinhas) {
         int a = 0-(carrinha.getPesoMax()*carrinha.getVolMax());
+        while(mCarrinhas.contains(a)) {
+            a++;
+        }
         mCarrinhas.insert(pair(a,carrinha));
     }
 
     map<int,Encomenda> mEncomendas;
     for(Encomenda encomenda : encomendas) {
         int a = encomenda.getVolume()*encomenda.getPeso();
+        while(mEncomendas.contains(a)) {
+            a++;
+        }
         mEncomendas.insert(pair(a,encomenda));
     }
 

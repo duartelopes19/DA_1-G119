@@ -101,6 +101,56 @@ void Empresa::otimizarNumeroEstafetas() {
 
 void Empresa::otimizarLucro() {
 
+    map<int,Carrinha> mCarrinhas;
+    for(Carrinha carrinha : carrinhas) {
+        int a = carrinha.getCusto();
+        while(mCarrinhas.contains(a)) {
+            a++;
+        }
+        mCarrinhas.insert(pair(a,carrinha));
+    }
+
+    map<int,Encomenda> mEncomendas;
+    for(Encomenda encomenda : encomendas) {
+        int a = 0-encomenda.getRecompensa();
+        while(mEncomendas.contains(a)) {
+            a++;
+        }
+        mEncomendas.insert(pair(a,encomenda));
+    }
+
+    queue<Encomenda> qEncomendas;
+    for(auto encomenda : mEncomendas) {
+        qEncomendas.push(encomenda.second);
+    }
+
+    vector<Carrinha> estafetas;
+    for(auto carrinha : mCarrinhas) {
+        estafetas.push_back(carrinha.second);
+    }
+
+    int carrinhasUsadas = 0;
+    int encomendasCarregadas;
+    int ganhos, despesas = 0;
+    for(Carrinha carrinha : carrinhas) {
+        carrinhasUsadas++;
+        encomendasCarregadas = 0;
+        despesas += carrinha.getCusto();
+        while((carrinha.getVolMax()!=0 || carrinha.getPesoMax()!=0) && !qEncomendas.empty())  {
+            int volume = carrinha.getVolMax()-qEncomendas.front().getVolume();
+            int peso = carrinha.getPesoMax()-qEncomendas.front().getPeso();
+            if(volume>=0 && peso>=0) {
+                carrinha.setVolMax(volume);
+                carrinha.setPesoMax(peso);
+                qEncomendas.pop();
+                encomendasCarregadas++;
+                ganhos += qEncomendas.front().getRecompensa();
+            } else { break; }
+        }
+        cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
+        if(qEncomendas.empty()) { break; }
+    }
+    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que custou à empresa " << despesas << "€ mas originou um retorno de " << ganhos << "€, contribuindo assim para um lucro de " << ganhos-despesas << "€." << endl << endl;
 }
 
 void Empresa::otimizarEntregasExpresso() {

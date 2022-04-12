@@ -9,6 +9,7 @@ Empresa::Empresa() {}
 void Empresa::addCarrinhas(string file) {
     string temp;
     int volMax, pesoMax, custo;
+    carrinhas.clear();
 
     ifstream fcarrinhas(file);
 
@@ -28,6 +29,7 @@ void Empresa::addCarrinhas(string file) {
 void Empresa::addEncomendas(string file) {
     string temp;
     int volume, peso, recompensa, duracao;
+    encomendas.clear();
 
     ifstream fencomendas(file);
 
@@ -49,6 +51,7 @@ void Empresa::addEncomendas(string file) {
 void Empresa::otimizarNumeroEstafetas() {
     std::sort(carrinhas.begin(), carrinhas.end());
     std::sort(encomendas.begin(), encomendas.end());
+    std::reverse(carrinhas.begin(), carrinhas.end());
 
     queue<Encomenda> qEncomendas;
     for(Encomenda encomenda : encomendas) {
@@ -60,8 +63,7 @@ void Empresa::otimizarNumeroEstafetas() {
     for(Carrinha carrinha : carrinhas) {
         carrinhasUsadas++;
         encomendasCarregadas = 0;
-        while(carrinha.getVolMax()!=0 || carrinha.getPesoMax()!=0) {
-            if(qEncomendas.empty()) { break; }
+        while((carrinha.getVolMax()!=0 || carrinha.getPesoMax()!=0) && !qEncomendas.empty())  {
             int volume = carrinha.getVolMax()-qEncomendas.front().getVolume();
             int peso = carrinha.getPesoMax()-qEncomendas.front().getPeso();
             if(volume>=0 && peso>=0) {
@@ -74,7 +76,7 @@ void Empresa::otimizarNumeroEstafetas() {
         cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
         if(qEncomendas.empty()) { break; }
     }
-    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl;
+    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << endl;
 }
 
 void Empresa::otimizarLucro() {

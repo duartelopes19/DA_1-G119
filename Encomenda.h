@@ -22,6 +22,10 @@ public:
     void setRecompensa(int recompensa);
     int getDuracao() const;
     void setDuracao(int duracao);
+    bool operator<(const Encomenda &rhs) const;
+    bool operator>(const Encomenda &rhs) const;
+    bool operator<=(const Encomenda &rhs) const;
+    bool operator>=(const Encomenda &rhs) const;
 };
 
 

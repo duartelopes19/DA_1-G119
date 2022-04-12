@@ -30,3 +30,28 @@ void Carrinha::setCusto(int custo) {
     Carrinha::custo = custo;
 }
 
+bool Carrinha::operator<(const Carrinha &rhs) const {
+    if (volMax < rhs.volMax)
+        return true;
+    if (rhs.volMax < volMax)
+        return false;
+    if (pesoMax < rhs.pesoMax)
+        return true;
+    if (rhs.pesoMax < pesoMax)
+        return false;
+    return custo < rhs.custo;
+}
+
+bool Carrinha::operator>(const Carrinha &rhs) const {
+    return rhs < *this;
+}
+
+bool Carrinha::operator<=(const Carrinha &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Carrinha::operator>=(const Carrinha &rhs) const {
+    return !(*this < rhs);
+}
+
+

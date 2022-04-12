@@ -5,12 +5,13 @@
 #ifndef DA_T1_G119_EMPRESA_H
 #define DA_T1_G119_EMPRESA_H
 
-
 #include "Encomenda.h"
 #include "Carrinha.h"
 #include <vector>
 #include <string>
 #include <fstream>
+#include <iostream>
+#include <queue>
 
 using namespace std;
 

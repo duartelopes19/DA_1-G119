@@ -7,6 +7,12 @@
 #IncludeRegexTransform: 
 
 /mnt/c/FEUP/DA/DA_T1_G119/Carrinha.h
+ostream
+-
+
+/mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp
+Empresa.h
+/mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
 
 /mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
 Encomenda.h
@@ -19,12 +25,10 @@ string
 -
 fstream
 -
-
-/mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h
-
-/mnt/c/FEUP/DA/DA_T1_G119/main.cpp
 iostream
 -
-Empresa.h
-/mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
+queue
+-
+
+/mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h
 

@@ -6,6 +6,8 @@
 #define DA_T1_G119_CARRINHA_H
 
 
+#include <ostream>
+
 class Carrinha {
 private:
     int volMax;
@@ -19,6 +21,10 @@ public:
     void setVolMax(int volMax);
     void setPesoMax(int pesoMax);
     void setCusto(int custo);
+    bool operator<(const Carrinha &rhs) const;
+    bool operator>(const Carrinha &rhs) const;
+    bool operator<=(const Carrinha &rhs) const;
+    bool operator>=(const Carrinha &rhs) const;
 };
 
 

@@ -83,7 +83,7 @@ queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
-        int a = (0-(encomenda.getPeso()*encomenda.getVolume()))*encomenda.getRecompensa();
+        int a = (encomenda.getPeso()*encomenda.getVolume())/encomenda.getRecompensa();
         mEncomendas.insert(pair(a,encomenda));
     }
 
@@ -99,7 +99,7 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
-        int a = carrinha.getVolMax()*carrinha.getPesoMax()*(0-carrinha.getCusto());
+        int a = 0-((carrinha.getVolMax()*carrinha.getPesoMax())/carrinha.getCusto());
         mCarrinhas.insert(pair(a,carrinha));
     }
 

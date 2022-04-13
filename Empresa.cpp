@@ -47,14 +47,11 @@ void Empresa::addEncomendas(string file) {
 }
 
 queue<Encomenda> Empresa::ordenarEncomendasPorEspaco() {
-    map<int,Encomenda> mEncomendas;
+    multimap<int,Encomenda> mEncomendas;
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
         int a = encomenda.getVolume()*encomenda.getPeso();
-        while(mEncomendas.contains(a)) {
-            a++;
-        }
         mEncomendas.insert(pair(a,encomenda));
     }
 
@@ -66,14 +63,11 @@ queue<Encomenda> Empresa::ordenarEncomendasPorEspaco() {
 }
 
 vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
-    map<int,Carrinha> mCarrinhas;
+    multimap<int,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
         int a = 0-(carrinha.getPesoMax()*carrinha.getVolMax());
-        while(mCarrinhas.contains(a)) {
-            a++;
-        }
         mCarrinhas.insert(pair(a,carrinha));
     }
 
@@ -85,14 +79,11 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
 }
 
 queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
-    map<int,Encomenda> mEncomendas;
+    multimap<int,Encomenda> mEncomendas;
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
         int a = (0-(encomenda.getPeso()*encomenda.getVolume()))*encomenda.getRecompensa();
-        while(mEncomendas.contains(a)) {
-            a++;
-        }
         mEncomendas.insert(pair(a,encomenda));
     }
 
@@ -104,14 +95,11 @@ queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
 }
 
 vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
-    map<int,Carrinha> mCarrinhas;
+    multimap<int,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
         int a = carrinha.getVolMax()*carrinha.getPesoMax()*(0-carrinha.getCusto());
-        while(mCarrinhas.contains(a)) {
-            a++;
-        }
         mCarrinhas.insert(pair(a,carrinha));
     }
 
@@ -123,14 +111,11 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
 }
 
 queue<Encomenda> Empresa::ordenarEncomendasPorDuracao() {
-    map<int,Encomenda> mEncomendas;
+    multimap<int,Encomenda> mEncomendas;
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
         int a = encomenda.getDuracao();
-        while(mEncomendas.contains(a)) {
-            a++;
-        }
         mEncomendas.insert(pair(a,encomenda));
     }
 

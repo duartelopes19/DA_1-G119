@@ -12,7 +12,6 @@ void Empresa::addCarrinhas(string file) {
     carrinhas.clear();
 
     ifstream fcarrinhas(file);
-
     getline(fcarrinhas,temp);
     while(!fcarrinhas.eof()) {
         getline(fcarrinhas,temp,' ');
@@ -32,7 +31,6 @@ void Empresa::addEncomendas(string file) {
     encomendas.clear();
 
     ifstream fencomendas(file);
-
     getline(fencomendas,temp);
     while(!fencomendas.eof()) {
         getline(fencomendas,temp,' ');
@@ -48,18 +46,10 @@ void Empresa::addEncomendas(string file) {
     }
 }
 
-void Empresa::otimizarNumeroEstafetas() {
-
-    map<int,Carrinha> mCarrinhas;
-    for(Carrinha carrinha : carrinhas) {
-        int a = 0-(carrinha.getPesoMax()*carrinha.getVolMax());
-        while(mCarrinhas.contains(a)) {
-            a++;
-        }
-        mCarrinhas.insert(pair(a,carrinha));
-    }
-
+queue<Encomenda> Empresa::ordenarEncomendasPorEspaco() {
     map<int,Encomenda> mEncomendas;
+    queue<Encomenda> qEncomendas;
+
     for(Encomenda encomenda : encomendas) {
         int a = encomenda.getVolume()*encomenda.getPeso();
         while(mEncomendas.contains(a)) {
@@ -68,24 +58,101 @@ void Empresa::otimizarNumeroEstafetas() {
         mEncomendas.insert(pair(a,encomenda));
     }
 
-    queue<Encomenda> qEncomendas;
     for(auto encomenda : mEncomendas) {
         qEncomendas.push(encomenda.second);
     }
 
+    return qEncomendas;
+}
+
+vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
+    map<int,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
+
+    for(Carrinha carrinha : carrinhas) {
+        int a = 0-(carrinha.getPesoMax()*carrinha.getVolMax());
+        while(mCarrinhas.contains(a)) {
+            a++;
+        }
+        mCarrinhas.insert(pair(a,carrinha));
+    }
+
     for(auto carrinha : mCarrinhas) {
         estafetas.push_back(carrinha.second);
     }
 
-    int carrinhasUsadas = 0;
-    int encomendasCarregadas;
+    return estafetas;
+}
+
+queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
+    map<int,Encomenda> mEncomendas;
+    queue<Encomenda> qEncomendas;
+
+    for(Encomenda encomenda : encomendas) {
+        int a = (0-(encomenda.getPeso()*encomenda.getVolume()))*encomenda.getRecompensa();
+        while(mEncomendas.contains(a)) {
+            a++;
+        }
+        mEncomendas.insert(pair(a,encomenda));
+    }
+
+    for(auto encomenda : mEncomendas) {
+        qEncomendas.push(encomenda.second);
+    }
+
+    return qEncomendas;
+}
+
+vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
+    map<int,Carrinha> mCarrinhas;
+    vector<Carrinha> estafetas;
+
+    for(Carrinha carrinha : carrinhas) {
+        int a = carrinha.getVolMax()*carrinha.getPesoMax()*(0-carrinha.getCusto());
+        while(mCarrinhas.contains(a)) {
+            a++;
+        }
+        mCarrinhas.insert(pair(a,carrinha));
+    }
+
+    for(auto carrinha : mCarrinhas) {
+        estafetas.push_back(carrinha.second);
+    }
+
+    return estafetas;
+}
+
+queue<Encomenda> Empresa::ordenarEncomendasPorDuracao() {
+    map<int,Encomenda> mEncomendas;
+    queue<Encomenda> qEncomendas;
+
+    for(Encomenda encomenda : encomendas) {
+        int a = encomenda.getDuracao();
+        while(mEncomendas.contains(a)) {
+            a++;
+        }
+        mEncomendas.insert(pair(a,encomenda));
+    }
+
+    for(auto encomenda : mEncomendas) {
+        qEncomendas.push(encomenda.second);
+    }
+
+    return qEncomendas;
+}
+
+void Empresa::otimizarNumeroEstafetas() {
+    queue<Encomenda> qEncomendas = ordenarEncomendasPorEspaco();
+    vector<Carrinha> estafetas = ordenarCarrinhasPorCapacidade();
+    int carrinhasUsadas = 0, encomendasCarregadas, volume, peso;
+
     for(Carrinha carrinha : estafetas) {
         carrinhasUsadas++;
         encomendasCarregadas = 0;
-        while((carrinha.getVolMax()!=0 || carrinha.getPesoMax()!=0) && !qEncomendas.empty())  {
-            int volume = carrinha.getVolMax()-qEncomendas.front().getVolume();
-            int peso = carrinha.getPesoMax()-qEncomendas.front().getPeso();
+        while(!qEncomendas.empty())  {
+            Encomenda encomenda = qEncomendas.front();
+            volume = carrinha.getVolMax()-encomenda.getVolume();
+            peso = carrinha.getPesoMax()-encomenda.getPeso();
             if(volume>=0 && peso>=0) {
                 carrinha.setVolMax(volume);
                 carrinha.setPesoMax(peso);
@@ -100,51 +167,24 @@ void Empresa::otimizarNumeroEstafetas() {
 }
 
 void Empresa::otimizarLucro() {
+    queue<Encomenda> qEncomendas = ordenarEncomendasPorRecompensa();
+    vector<Carrinha> estafetas = ordenarCarrinhasPorCusto();
+    int carrinhasUsadas = 0, encomendasCarregadas, ganhos = 0, despesas = 0, volume, peso;
 
-    map<int,Carrinha> mCarrinhas;
-    for(Carrinha carrinha : carrinhas) {
-        int a = carrinha.getVolMax()*carrinha.getPesoMax()*(0-carrinha.getCusto());
-        while(mCarrinhas.contains(a)) {
-            a++;
-        }
-        mCarrinhas.insert(pair(a,carrinha));
-    }
-
-    map<int,Encomenda> mEncomendas;
-    for(Encomenda encomenda : encomendas) {
-        int a = (0-(encomenda.getPeso()*encomenda.getVolume()))*encomenda.getRecompensa();
-        while(mEncomendas.contains(a)) {
-            a++;
-        }
-        mEncomendas.insert(pair(a,encomenda));
-    }
-
-    queue<Encomenda> qEncomendas;
-    for(auto encomenda : mEncomendas) {
-        qEncomendas.push(encomenda.second);
-    }
-
-    vector<Carrinha> estafetas;
-    for(auto carrinha : mCarrinhas) {
-        estafetas.push_back(carrinha.second);
-    }
-
-    int carrinhasUsadas = 0;
-    int encomendasCarregadas;
-    int ganhos, despesas = 0;
     for(Carrinha carrinha : estafetas) {
         carrinhasUsadas++;
         encomendasCarregadas = 0;
         despesas += carrinha.getCusto();
-        while((carrinha.getVolMax()!=0 || carrinha.getPesoMax()!=0) && !qEncomendas.empty())  {
-            int volume = carrinha.getVolMax()-qEncomendas.front().getVolume();
-            int peso = carrinha.getPesoMax()-qEncomendas.front().getPeso();
+        while(!qEncomendas.empty())  {
+            Encomenda encomenda = qEncomendas.front();
+            volume = carrinha.getVolMax()-encomenda.getVolume();
+            peso = carrinha.getPesoMax()-encomenda.getPeso();
             if(volume>=0 && peso>=0) {
                 carrinha.setVolMax(volume);
                 carrinha.setPesoMax(peso);
-                qEncomendas.pop();
                 encomendasCarregadas++;
-                ganhos += qEncomendas.front().getRecompensa();
+                ganhos += encomenda.getRecompensa();
+                qEncomendas.pop();
             } else { break; }
         }
         cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
@@ -154,23 +194,9 @@ void Empresa::otimizarLucro() {
 }
 
 void Empresa::otimizarEntregasExpresso() {
+    queue<Encomenda> qEncomendas = ordenarEncomendasPorDuracao();
+    int viagensFeitas = 0, tempoDecorrido = 0;
 
-    map<int,Encomenda> mEncomendas;
-    for(Encomenda encomenda : encomendas) {
-        int a = encomenda.getDuracao();
-        while(mEncomendas.contains(a)) {
-            a++;
-        }
-        mEncomendas.insert(pair(a,encomenda));
-    }
-
-    queue<Encomenda> qEncomendas;
-    for(auto encomenda : mEncomendas) {
-        qEncomendas.push(encomenda.second);
-    }
-
-    int viagensFeitas = 0;
-    int tempoDecorrido = 0;
     while(!qEncomendas.empty()) {
         Encomenda encomenda = qEncomendas.front();
         tempoDecorrido += encomenda.getDuracao();
@@ -179,7 +205,9 @@ void Empresa::otimizarEntregasExpresso() {
             break;
         } else {
             viagensFeitas++;
+            qEncomendas.pop();
         }
     }
     cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00." << endl << endl;
 }
+

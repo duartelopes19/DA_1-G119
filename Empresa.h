@@ -24,6 +24,11 @@ public:
     Empresa();
     void addCarrinhas(string file);
     void addEncomendas(string file);
+    queue<Encomenda> ordenarEncomendasPorEspaco();
+    vector<Carrinha> ordenarCarrinhasPorCapacidade();
+    queue<Encomenda> ordenarEncomendasPorRecompensa();
+    vector<Carrinha> ordenarCarrinhasPorCusto();
+    queue<Encomenda> ordenarEncomendasPorDuracao();
     void otimizarNumeroEstafetas();
     void otimizarLucro();
     void otimizarEntregasExpresso();

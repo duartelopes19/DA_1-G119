@@ -103,7 +103,7 @@ void Empresa::otimizarLucro() {
 
     map<int,Carrinha> mCarrinhas;
     for(Carrinha carrinha : carrinhas) {
-        int a = carrinha.getCusto();
+        int a = carrinha.getVolMax()*carrinha.getPesoMax()*(0-carrinha.getCusto());
         while(mCarrinhas.contains(a)) {
             a++;
         }
@@ -112,7 +112,7 @@ void Empresa::otimizarLucro() {
 
     map<int,Encomenda> mEncomendas;
     for(Encomenda encomenda : encomendas) {
-        int a = 0-encomenda.getRecompensa();
+        int a = (0-(encomenda.getPeso()*encomenda.getVolume()))*encomenda.getRecompensa();
         while(mEncomendas.contains(a)) {
             a++;
         }
@@ -155,4 +155,31 @@ void Empresa::otimizarLucro() {
 
 void Empresa::otimizarEntregasExpresso() {
 
+    map<int,Encomenda> mEncomendas;
+    for(Encomenda encomenda : encomendas) {
+        int a = encomenda.getDuracao();
+        while(mEncomendas.contains(a)) {
+            a++;
+        }
+        mEncomendas.insert(pair(a,encomenda));
+    }
+
+    queue<Encomenda> qEncomendas;
+    for(auto encomenda : mEncomendas) {
+        qEncomendas.push(encomenda.second);
+    }
+
+    int viagensFeitas = 0;
+    int tempoDecorrido = 0;
+    while(!qEncomendas.empty()) {
+        Encomenda encomenda = qEncomendas.front();
+        tempoDecorrido += encomenda.getDuracao();
+        if(tempoDecorrido>28800) {
+            tempoDecorrido -= encomenda.getDuracao();
+            break;
+        } else {
+            viagensFeitas++;
+        }
+    }
+    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00." << endl << endl;
 }

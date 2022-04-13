@@ -14,7 +14,7 @@ void menu(Empresa a) {
         case 2: a.otimizarLucro(); break;
         case 3: a.otimizarEntregasExpresso(); break;
         case 4: return;
-        default:;
+        default: cout << endl << "Resposta inválida. Tente novamente.";
     }
     menu(a);
 }

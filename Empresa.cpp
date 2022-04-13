@@ -67,8 +67,8 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
-        int a = 0-(carrinha.getPesoMax()*carrinha.getVolMax());
-        mCarrinhas.insert(pair(a,carrinha));
+        int a = carrinha.getPesoMax()*carrinha.getVolMax();
+        mCarrinhas.insert(pair(-a,carrinha));
     }
 
     for(auto carrinha : mCarrinhas) {
@@ -79,11 +79,11 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
 }
 
 queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
-    multimap<int,Encomenda> mEncomendas;
+    multimap<double,Encomenda> mEncomendas;
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
-        int a = (encomenda.getPeso()*encomenda.getVolume())/encomenda.getRecompensa();
+        double a = (double) (encomenda.getPeso()*encomenda.getVolume())/encomenda.getRecompensa();
         mEncomendas.insert(pair(a,encomenda));
     }
 
@@ -95,12 +95,12 @@ queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
 }
 
 vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
-    multimap<int,Carrinha> mCarrinhas;
+    multimap<double,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
-        int a = 0-((carrinha.getVolMax()*carrinha.getPesoMax())/carrinha.getCusto());
-        mCarrinhas.insert(pair(a,carrinha));
+        double a = (double) (carrinha.getVolMax()*carrinha.getPesoMax())/carrinha.getCusto();
+        mCarrinhas.insert(pair(-a,carrinha));
     }
 
     for(auto carrinha : mCarrinhas) {
@@ -150,7 +150,6 @@ void Empresa::otimizarNumeroEstafetas() {
 
             } else { break; }
         }
-        cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
     }
     cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << endl;
 }
@@ -158,11 +157,12 @@ void Empresa::otimizarNumeroEstafetas() {
 void Empresa::otimizarLucro() {
     queue<Encomenda> qEncomendas = ordenarEncomendasPorRecompensa();
     vector<Carrinha> estafetas = ordenarCarrinhasPorCusto();
-    int carrinhasUsadas = 0, encomendasCarregadas, ganhos = 0, despesas = 0, volume, peso;
+    int carrinhasUsadas = 0, encomendasCarregadas, ganhos = 0, despesas = 0, volume, peso, lucro, encomendasEntregues = 0;
 
     for(Carrinha carrinha : estafetas) {
         if(qEncomendas.empty()) { break; }
 
+        lucro = ganhos-despesas;
         carrinhasUsadas++;
         encomendasCarregadas = 0;
         despesas += carrinha.getCusto();
@@ -181,9 +181,14 @@ void Empresa::otimizarLucro() {
 
             } else { break; }
         }
-        cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
+        encomendasEntregues += encomendasCarregadas;
+        if(lucro>(ganhos-despesas)) {
+            carrinhasUsadas--;
+            encomendasEntregues -= encomendasCarregadas;
+            break;
+        }
     }
-    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que custou à empresa " << despesas << "€ mas originou um retorno de " << ganhos << "€, contribuindo assim para um lucro de " << ganhos-despesas << "€." << endl << endl;
+    cout << "Foram distribuídas " << encomendasEntregues << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << encomendas.size()-encomendasEntregues << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que originou um lucro de " << lucro << "€." << endl << endl;
 }
 
 void Empresa::otimizarEntregasExpresso() {

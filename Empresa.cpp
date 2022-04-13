@@ -218,6 +218,6 @@ void Empresa::otimizarEntregasExpresso() {
             qEncomendas.pop();
         }
     }
-    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00." << endl << endl;
+    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00. Sobrando então " << qEncomendas.size() << " encomendas que irão ser retornadas ao fornecedor." << endl << endl;
 }
 

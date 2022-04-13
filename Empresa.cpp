@@ -147,21 +147,25 @@ void Empresa::otimizarNumeroEstafetas() {
     int carrinhasUsadas = 0, encomendasCarregadas, volume, peso;
 
     for(Carrinha carrinha : estafetas) {
+        if(qEncomendas.empty()) { break; }
+
         carrinhasUsadas++;
         encomendasCarregadas = 0;
+
         while(!qEncomendas.empty())  {
             Encomenda encomenda = qEncomendas.front();
             volume = carrinha.getVolMax()-encomenda.getVolume();
             peso = carrinha.getPesoMax()-encomenda.getPeso();
+
             if(volume>=0 && peso>=0) {
                 carrinha.setVolMax(volume);
                 carrinha.setPesoMax(peso);
                 qEncomendas.pop();
                 encomendasCarregadas++;
+
             } else { break; }
         }
         cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
-        if(qEncomendas.empty()) { break; }
     }
     cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << endl;
 }
@@ -172,23 +176,27 @@ void Empresa::otimizarLucro() {
     int carrinhasUsadas = 0, encomendasCarregadas, ganhos = 0, despesas = 0, volume, peso;
 
     for(Carrinha carrinha : estafetas) {
+        if(qEncomendas.empty()) { break; }
+
         carrinhasUsadas++;
         encomendasCarregadas = 0;
         despesas += carrinha.getCusto();
+
         while(!qEncomendas.empty())  {
             Encomenda encomenda = qEncomendas.front();
             volume = carrinha.getVolMax()-encomenda.getVolume();
             peso = carrinha.getPesoMax()-encomenda.getPeso();
+
             if(volume>=0 && peso>=0) {
                 carrinha.setVolMax(volume);
                 carrinha.setPesoMax(peso);
                 encomendasCarregadas++;
                 ganhos += encomenda.getRecompensa();
                 qEncomendas.pop();
+
             } else { break; }
         }
         cout << "Na " << carrinhasUsadas << "ª carrinha foram carregadas " << encomendasCarregadas << " encomendas." << endl;
-        if(qEncomendas.empty()) { break; }
     }
     cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que custou à empresa " << despesas << "€ mas originou um retorno de " << ganhos << "€, contribuindo assim para um lucro de " << ganhos-despesas << "€." << endl << endl;
 }
@@ -200,9 +208,11 @@ void Empresa::otimizarEntregasExpresso() {
     while(!qEncomendas.empty()) {
         Encomenda encomenda = qEncomendas.front();
         tempoDecorrido += encomenda.getDuracao();
+
         if(tempoDecorrido>28800) {
             tempoDecorrido -= encomenda.getDuracao();
             break;
+
         } else {
             viagensFeitas++;
             qEncomendas.pop();

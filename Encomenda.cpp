@@ -38,31 +38,3 @@ int Encomenda::getDuracao() const {
 void Encomenda::setDuracao(int duracao) {
     Encomenda::duracao = duracao;
 }
-
-bool Encomenda::operator<(const Encomenda &rhs) const {
-    if (volume < rhs.volume)
-        return true;
-    if (rhs.volume < volume)
-        return false;
-    if (peso < rhs.peso)
-        return true;
-    if (rhs.peso < peso)
-        return false;
-    if (recompensa < rhs.recompensa)
-        return true;
-    if (rhs.recompensa < recompensa)
-        return false;
-    return duracao < rhs.duracao;
-}
-
-bool Encomenda::operator>(const Encomenda &rhs) const {
-    return rhs < *this;
-}
-
-bool Encomenda::operator<=(const Encomenda &rhs) const {
-    return !(rhs < *this);
-}
-
-bool Encomenda::operator>=(const Encomenda &rhs) const {
-    return !(*this < rhs);
-}

@@ -21,10 +21,6 @@ public:
     void setVolMax(int volMax);
     void setPesoMax(int pesoMax);
     void setCusto(int custo);
-    bool operator<(const Carrinha &rhs) const;
-    bool operator>(const Carrinha &rhs) const;
-    bool operator<=(const Carrinha &rhs) const;
-    bool operator>=(const Carrinha &rhs) const;
 };
 
 

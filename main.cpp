@@ -3,7 +3,7 @@
 
 void menu(Empresa a) {
     int option;
-    cout << "Logística Urbana para Entrega de Mercadorias" << endl << endl;
+    cout << endl << "Logística Urbana para Entrega de Mercadorias" << endl << endl;
     cout << "1- Cenário 1: otimização do número de estafetas" << endl;
     cout << "2- Cenário 2: otimização do lucro da empresa" << endl;
     cout << "3- Cenário 3: otimização das entregas expresso" << endl;

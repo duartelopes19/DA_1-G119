@@ -187,6 +187,7 @@ void Empresa::otimizarLucro() {
             encomendasEntregues -= encomendasCarregadas;
             break;
         }
+        lucro = ganhos-despesas;
     }
     cout << "Foram distribuídas " << encomendasEntregues << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << encomendas.size()-encomendasEntregues << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que originou um lucro de " << lucro << "€." << endl << endl;
 }

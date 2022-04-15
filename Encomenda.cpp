@@ -1,7 +1,3 @@
-//
-// Created by User on 07/04/2022.
-//
-
 #include "Encomenda.h"
 
 Encomenda::Encomenda(int volume, int peso, int recompensa, int duracao) : volume(volume), peso(peso),

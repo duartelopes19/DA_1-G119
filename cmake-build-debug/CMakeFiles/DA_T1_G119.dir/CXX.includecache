@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/FEUP/DA/DA_T1_G119/Carrinha.cpp
+Carrinha.h
 /mnt/c/FEUP/DA/DA_T1_G119/Carrinha.h
-ostream
--
+
+/mnt/c/FEUP/DA/DA_T1_G119/Carrinha.h
 
 /mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp
 Empresa.h
@@ -32,5 +34,15 @@ queue
 map
 -
 
+/mnt/c/FEUP/DA/DA_T1_G119/Encomenda.cpp
+Encomenda.h
 /mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h
+
+/mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h
+
+/mnt/c/FEUP/DA/DA_T1_G119/main.cpp
+iostream
+-
+Empresa.h
+/mnt/c/FEUP/DA/DA_T1_G119/Empresa.h
 

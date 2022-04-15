@@ -1,7 +1,3 @@
-//
-// Created by User on 07/04/2022.
-//
-
 #include "Carrinha.h"
 
 Carrinha::Carrinha(int volMax, int pesoMax, int custo) : volMax(volMax), pesoMax(pesoMax), custo(custo) {}

@@ -1,7 +1,3 @@
-//
-// Created by User on 07/04/2022.
-//
-
 #ifndef DA_T1_G119_EMPRESA_H
 #define DA_T1_G119_EMPRESA_H
 
@@ -33,6 +29,5 @@ public:
     void otimizarLucro();
     void otimizarEntregasExpresso();
 };
-
 
 #endif //DA_T1_G119_EMPRESA_H

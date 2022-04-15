@@ -1,7 +1,3 @@
-//
-// Created by User on 07/04/2022.
-//
-
 #include "Empresa.h"
 
 Empresa::Empresa() {}
@@ -209,6 +205,5 @@ void Empresa::otimizarEntregasExpresso() {
             qEncomendas.pop();
         }
     }
-    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00. Sobrando então " << qEncomendas.size() << " encomendas que irão ser retornadas ao fornecedor." << endl << endl;
+    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << (double)tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00. Sobrando então " << qEncomendas.size() << " encomendas que irão ser retornadas ao fornecedor." << endl << endl;
 }
-

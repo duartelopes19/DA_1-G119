@@ -125,13 +125,12 @@ queue<Encomenda> Empresa::ordenarEncomendasPorDuracao() {
 void Empresa::otimizarNumeroEstafetas() {
     queue<Encomenda> qEncomendas = ordenarEncomendasPorEspaco();
     vector<Carrinha> estafetas = ordenarCarrinhasPorCapacidade();
-    int carrinhasUsadas = 0, encomendasCarregadas, volume, peso;
+    int carrinhasUsadas = 0, volume, peso;
 
     for(Carrinha carrinha : estafetas) {
         if(qEncomendas.empty()) { break; }
 
         carrinhasUsadas++;
-        encomendasCarregadas = 0;
 
         while(!qEncomendas.empty())  {
             Encomenda encomenda = qEncomendas.front();
@@ -142,7 +141,6 @@ void Empresa::otimizarNumeroEstafetas() {
                 carrinha.setVolMax(volume);
                 carrinha.setPesoMax(peso);
                 qEncomendas.pop();
-                encomendasCarregadas++;
 
             } else { break; }
         }

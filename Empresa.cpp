@@ -147,7 +147,7 @@ void Empresa::otimizarNumeroEstafetas() {
             } else { break; }
         }
     }
-    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << endl;
+    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas." << endl << "Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << endl;
 }
 
 void Empresa::otimizarLucro() {
@@ -185,7 +185,7 @@ void Empresa::otimizarLucro() {
         }
         lucro = ganhos-despesas;
     }
-    cout << "Foram distribuídas " << encomendasEntregues << " encomendas por " << carrinhasUsadas << " estafetas. Sobrando " << encomendas.size()-encomendasEntregues << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que originou um lucro de " << lucro << "€." << endl << endl;
+    cout << "Foram distribuídas " << encomendasEntregues << " encomendas por " << carrinhasUsadas << " estafetas." << endl << "Sobrando " << encomendas.size()-encomendasEntregues << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que originou um lucro de " << lucro << "€." << endl << endl;
 }
 
 void Empresa::otimizarEntregasExpresso() {
@@ -205,5 +205,5 @@ void Empresa::otimizarEntregasExpresso() {
             qEncomendas.pop();
         }
     }
-    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << (double)tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00. Sobrando então " << qEncomendas.size() << " encomendas que irão ser retornadas ao fornecedor." << endl << endl;
+    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << (double)tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00." << endl << "Sobrando então " << qEncomendas.size() << " encomendas que irão ser retornadas ao fornecedor." << endl << endl;
 }

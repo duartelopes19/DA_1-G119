@@ -1,3 +1,4 @@
-/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/DA_T1_G119.dir
+/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles/documentation.dir
+/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles/DA_T1_G119.dir

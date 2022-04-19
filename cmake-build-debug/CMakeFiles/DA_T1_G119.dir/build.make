@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/FEUP/DA/DA_T1_G119
+CMAKE_SOURCE_DIR = /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug
+CMAKE_BINARY_DIR = /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DA_T1_G119.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/DA_T1_G119.dir/flags.make
 
 CMakeFiles/DA_T1_G119.dir/main.cpp.o: CMakeFiles/DA_T1_G119.dir/flags.make
 CMakeFiles/DA_T1_G119.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DA_T1_G119.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/main.cpp.o -c /mnt/c/FEUP/DA/DA_T1_G119/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DA_T1_G119.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/main.cpp.o -c /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/main.cpp
 
 CMakeFiles/DA_T1_G119.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DA_T1_G119.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/FEUP/DA/DA_T1_G119/main.cpp > CMakeFiles/DA_T1_G119.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/main.cpp > CMakeFiles/DA_T1_G119.dir/main.cpp.i
 
 CMakeFiles/DA_T1_G119.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DA_T1_G119.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/FEUP/DA/DA_T1_G119/main.cpp -o CMakeFiles/DA_T1_G119.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/main.cpp -o CMakeFiles/DA_T1_G119.dir/main.cpp.s
 
 CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o: CMakeFiles/DA_T1_G119.dir/flags.make
 CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o: ../Empresa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o -c /mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/Empresa.cpp.o -c /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Empresa.cpp
 
 CMakeFiles/DA_T1_G119.dir/Empresa.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DA_T1_G119.dir/Empresa.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp > CMakeFiles/DA_T1_G119.dir/Empresa.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Empresa.cpp > CMakeFiles/DA_T1_G119.dir/Empresa.cpp.i
 
 CMakeFiles/DA_T1_G119.dir/Empresa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DA_T1_G119.dir/Empresa.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp -o CMakeFiles/DA_T1_G119.dir/Empresa.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Empresa.cpp -o CMakeFiles/DA_T1_G119.dir/Empresa.cpp.s
 
 CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o: CMakeFiles/DA_T1_G119.dir/flags.make
 CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o: ../Carrinha.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o -c /mnt/c/FEUP/DA/DA_T1_G119/Carrinha.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o -c /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Carrinha.cpp
 
 CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/FEUP/DA/DA_T1_G119/Carrinha.cpp > CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Carrinha.cpp > CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.i
 
 CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/FEUP/DA/DA_T1_G119/Carrinha.cpp -o CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Carrinha.cpp -o CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.s
 
 CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o: CMakeFiles/DA_T1_G119.dir/flags.make
 CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o: ../Encomenda.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o -c /mnt/c/FEUP/DA/DA_T1_G119/Encomenda.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o -c /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Encomenda.cpp
 
 CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/FEUP/DA/DA_T1_G119/Encomenda.cpp > CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Encomenda.cpp > CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.i
 
 CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/FEUP/DA/DA_T1_G119/Encomenda.cpp -o CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Encomenda.cpp -o CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.s
 
 # Object files for target DA_T1_G119
 DA_T1_G119_OBJECTS = \
@@ -125,7 +125,7 @@ DA_T1_G119: CMakeFiles/DA_T1_G119.dir/Carrinha.cpp.o
 DA_T1_G119: CMakeFiles/DA_T1_G119.dir/Encomenda.cpp.o
 DA_T1_G119: CMakeFiles/DA_T1_G119.dir/build.make
 DA_T1_G119: CMakeFiles/DA_T1_G119.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable DA_T1_G119"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable DA_T1_G119"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DA_T1_G119.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/DA_T1_G119.dir/clean:
 .PHONY : CMakeFiles/DA_T1_G119.dir/clean
 
 CMakeFiles/DA_T1_G119.dir/depend:
-	cd /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/FEUP/DA/DA_T1_G119 /mnt/c/FEUP/DA/DA_T1_G119 /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/DA_T1_G119.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119 /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119 /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles/DA_T1_G119.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/DA_T1_G119.dir/depend
 

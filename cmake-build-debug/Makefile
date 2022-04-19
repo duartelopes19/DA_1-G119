@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/FEUP/DA/DA_T1_G119
+CMAKE_SOURCE_DIR = /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug
+CMAKE_BINARY_DIR = /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named documentation
+
+# Build rule for target.
+documentation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 documentation
+.PHONY : documentation
+
+# fast build rule for target.
+documentation/fast:
+	$(MAKE) -f CMakeFiles/documentation.dir/build.make CMakeFiles/documentation.dir/build
+.PHONY : documentation/fast
 
 #=============================================================================
 # Target rules for targets named DA_T1_G119
@@ -239,6 +252,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... documentation"
 	@echo "... DA_T1_G119"
 	@echo "... Carrinha.o"
 	@echo "... Carrinha.i"

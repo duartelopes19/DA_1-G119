@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/FEUP/DA/DA_T1_G119
+CMAKE_SOURCE_DIR = /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug
+CMAKE_BINARY_DIR = /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -63,9 +63,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/documentation.dir/clean
 clean: CMakeFiles/DA_T1_G119.dir/clean
-
+	$(CMAKE_COMMAND) -P CMakeFiles/cmake_directory_clean.cmake
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/documentation.dir
+
+# All Build rule for target.
+CMakeFiles/documentation.dir/all:
+	$(MAKE) -f CMakeFiles/documentation.dir/build.make CMakeFiles/documentation.dir/depend
+	$(MAKE) -f CMakeFiles/documentation.dir/build.make CMakeFiles/documentation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=6 "Built target documentation"
+.PHONY : CMakeFiles/documentation.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/documentation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/documentation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/documentation.dir/rule
+
+# Convenience name for target.
+documentation: CMakeFiles/documentation.dir/rule
+
+.PHONY : documentation
+
+# clean rule for target.
+CMakeFiles/documentation.dir/clean:
+	$(MAKE) -f CMakeFiles/documentation.dir/build.make CMakeFiles/documentation.dir/clean
+.PHONY : CMakeFiles/documentation.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/DA_T1_G119.dir
@@ -74,14 +102,14 @@ clean: CMakeFiles/DA_T1_G119.dir/clean
 CMakeFiles/DA_T1_G119.dir/all:
 	$(MAKE) -f CMakeFiles/DA_T1_G119.dir/build.make CMakeFiles/DA_T1_G119.dir/depend
 	$(MAKE) -f CMakeFiles/DA_T1_G119.dir/build.make CMakeFiles/DA_T1_G119.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target DA_T1_G119"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target DA_T1_G119"
 .PHONY : CMakeFiles/DA_T1_G119.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DA_T1_G119.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DA_T1_G119.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/DA_T1_G119.dir/rule
 
 # Convenience name for target.

@@ -1,4 +1,5 @@
-C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/sh -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' /mnt/c/FEUP/DA/DA_T1_G119"
+/home/arcade/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119
+-- Found Doxygen: /usr/bin/doxygen (found version "1.8.17") found components: doxygen missing components: dot
 -- Configuring done
 -- Generating done
--- Build files have been written to: /mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug
+-- Build files have been written to: /home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug

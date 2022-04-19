@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "DA_T1_G119",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DA_T1_G119::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DA_T1_G119-Debug-0c02ef5e986ccf280ccf.json",
+					"name" : "DA_T1_G119",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "documentation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-documentation-Debug-d49a2f878793b33b261f.json",
+					"name" : "documentation",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug",
+		"source" : "/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

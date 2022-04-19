@@ -5,41 +5,51 @@
 		<Option title="DA_T1_G119"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug"/>
+				<Option working_dir="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug"/>
+				<Option working_dir="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug"/>
+				<Option working_dir="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="documentation">
+				<Option working_dir="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 documentation"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DA_T1_G119">
-				<Option output="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/DA_T1_G119" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug"/>
+				<Option output="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/DA_T1_G119" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +63,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 DA_T1_G119"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 DA_T1_G119"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DA_T1_G119/fast">
-				<Option output="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/DA_T1_G119" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug"/>
+				<Option output="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/DA_T1_G119" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,36 +85,45 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 DA_T1_G119/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/FEUP/DA/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 DA_T1_G119/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/Carrinha.cpp">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Carrinha.cpp">
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/Carrinha.h">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Carrinha.h">
+			<Option target="documentation"/>
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/Empresa.cpp">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Empresa.cpp">
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/Empresa.h">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Empresa.h">
+			<Option target="documentation"/>
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/Encomenda.cpp">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Encomenda.cpp">
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/Encomenda.h">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/Encomenda.h">
+			<Option target="documentation"/>
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/main.cpp">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/main.cpp">
 			<Option target="DA_T1_G119"/>
 		</Unit>
-		<Unit filename="/mnt/c/FEUP/DA/DA_T1_G119/CMakeLists.txt">
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeDoxyfile.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\"/>
+		</Unit>
+		<Unit filename="/home/arcade/Cadeiras/2ano/DA/Project/DA_T1_G119/cmake-build-debug/CMakeDoxygenDefaults.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

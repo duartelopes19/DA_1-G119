@@ -94,7 +94,7 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
     multimap<double,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
 
-    for(Carrinha carrinha : carrinhas) {
+    for(Carrinha carrinha : carrinhas) {1
         double a = (double) (carrinha.getVolMax()*carrinha.getPesoMax())/carrinha.getCusto();
         mCarrinhas.insert(pair(-a,carrinha));
     }

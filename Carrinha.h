@@ -3,24 +3,31 @@
 
 class Carrinha {
 private:
+    int id;
     int volMax;
     int pesoMax;
     int custo;
 public:
     //! \brief Construtor simples
-    //! \param volMax Volume mÃ¡ximo da carrinha
-    //! \param pesoMax Peso mÃ¡ximo da carrinha
+    //! \param volMax Volume máximo da carrinha
+    //! \param pesoMax Peso máximo da carrinha
     //! \param custo Custo de viagem da carrinha
-    Carrinha(int volMax, int pesoMax, int custo);
+    Carrinha(int id, int volMax, int pesoMax, int custo);
+    //! \brief Getter simples do id
+    //! \return da carrinha
+    int getIdCar() const;
     //! \brief Getter simples do Volume
-    //! \return Volume mÃ¡ximo da carrinha
+    //! \return Volume máximo da carrinha
     int getVolMax() const;
     //! \brief Getter simples do Peso
-    //! \return Peso mÃ¡ximo da carrinha
+    //! \return Peso máximo da carrinha
     int getPesoMax() const;
     //! \brief Getter simples do Custo
     //! \return Custo de viagem da carrinha
     int getCusto() const;
+    //! \brief Setter simples do Volume
+    //! \param volMax Volume a substituir
+    void setIdCar(int id);
     //! \brief Setter simples do Volume
     //! \param volMax Volume a substituir
     void setVolMax(int volMax);

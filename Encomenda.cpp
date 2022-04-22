@@ -1,7 +1,23 @@
 #include "Encomenda.h"
 
-Encomenda::Encomenda(int volume, int peso, int recompensa, int duracao) : volume(volume), peso(peso),
-                                                                          recompensa(recompensa), duracao(duracao) {}
+Encomenda::Encomenda(int idm, int idvol, int volume, int peso, int recompensa, int duracao) : idm(idm),idvol(idvol),volume(volume), peso(peso),
+                     recompensa(recompensa), duracao(duracao) {}
+
+int Encomenda::getIdm() const {
+    return idm;
+}
+
+void Encomenda::setIdm(int idm) {
+     Encomenda::idm = idm;
+}
+
+int Encomenda::getIdvol() const {
+    return idvol;
+}
+
+void Encomenda::setIdvol(int idvol) {
+     Encomenda::idvol = idvol;
+}
 
 int Encomenda::getVolume() const {
     return volume;

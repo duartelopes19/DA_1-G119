@@ -16,6 +16,10 @@ class Empresa {
 private:
     vector<Carrinha> carrinhas;
     vector<Encomenda> encomendas;
+    vector<Carrinha> carga;
+    vector<Encomenda> manifesto;
+
+
 public:
     //! \brief Construtor simples
     Empresa();
@@ -27,6 +31,12 @@ public:
     //! Lẽ as encomendas de um ficheiro e adiciona a um vector
     //! \param file ficheiro que contêm as encomendas e a sua informação
     void addEncomendas(string file);
+    //! regista em ficheiro as encomendas distribuidas pelas carrinha
+    //! com um id de carrinha e um id de encomenda
+    void registarCenario();
+    //! regista em ficheiro os totais transportados na carrinha
+    //! com um id de carrinha
+    void registarCarrinhacarga();
     //! \brief Ordena as Encomendas por menor espaço
     //! Espaço = Peso * Volume
     //! \return Fila ordenada por ordem crescente de espaço

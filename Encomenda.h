@@ -3,6 +3,8 @@
 
 class Encomenda {
 private:
+    int idm;
+    int idvol;
     int volume;
     int peso;
     int recompensa;
@@ -12,8 +14,20 @@ public:
     //! \param volume Volume da encomenda
     //! \param peso Peso da encomenda
     //! \param recompensa Recompensa pela entrega da encomenda
-    //! \param duracao DuraÃ§Ã£o da entrega
-    Encomenda(int volume, int peso, int recompensa, int duracao);
+    //! \param duracao Duração da entrega
+    Encomenda(int idm, int idvol, int volume, int peso, int recompensa, int duracao);
+    //! \brief Getter simples do id manifesto
+    //! \return id da manifesto da carrinha
+    int getIdm() const;
+    //! \brief Setter simples do manifesto
+    //! \param idm id manifesto a substituir
+    void setIdm(int idm);
+    //! \brief Getter simples do id do volume
+    //! \return id do volume da encomenda
+    int getIdvol() const;
+    //! \brief Setter simples do id do volume
+    //! \param id do volume da encomenda
+    void setIdvol(int idvol);
     //! \brief Getter simples do Volume
     //! \return Volume da encomenda
     int getVolume() const;
@@ -32,11 +46,11 @@ public:
     //! \brief Setter simples da Recompensa
     //! \param recompensa Recompensa a substituir
     void setRecompensa(int recompensa);
-    //! \brief Getter simples da DuraÃ§Ã£o
-    //! \return DuraÃ§aÃ£o da entrega da encomenda
+    //! \brief Getter simples da Duração
+    //! \return Duraçaão da entrega da encomenda
     int getDuracao() const;
-    //! \brief Setter simples da DuraÃ§Ã£o
-    //! \param duracao DuraÃ§Ã£o a substituir
+    //! \brief Setter simples da Duração
+    //! \param duracao Duração a substituir
     void setDuracao(int duracao);
 };
 

@@ -2,33 +2,48 @@
 
 Empresa::Empresa() {}
 
+
+
 void Empresa::addCarrinhas(string file) {
     string temp;
+    int id=0;
     int volMax, pesoMax, custo;
     carrinhas.clear();
 
     ifstream fcarrinhas(file);
+
     getline(fcarrinhas,temp);
-    while(!fcarrinhas.eof()) {
+
+        while(!fcarrinhas.eof()) {
         getline(fcarrinhas,temp,' ');
+
         volMax = stoi(temp);
+
+
         getline(fcarrinhas,temp,' ');
         pesoMax = stoi(temp);
+
         getline(fcarrinhas,temp,'\n');
         custo = stoi(temp);
-        Carrinha carrinha(volMax,pesoMax,custo);
+
+        Carrinha carrinha(id,volMax,pesoMax,custo);
         carrinhas.push_back(carrinha);
+
     }
+
 }
 
 void Empresa::addEncomendas(string file) {
     string temp;
+    int idm=0;
+    int idvol=0;
     int volume, peso, recompensa, duracao;
     encomendas.clear();
 
     ifstream fencomendas(file);
     getline(fencomendas,temp);
     while(!fencomendas.eof()) {
+        idvol++;
         getline(fencomendas,temp,' ');
         volume = stoi(temp);
         getline(fencomendas,temp,' ');
@@ -37,10 +52,87 @@ void Empresa::addEncomendas(string file) {
         recompensa = stoi(temp);
         getline(fencomendas,temp,'\n');
         duracao = stoi(temp);
-        Encomenda encomenda(volume,peso,recompensa,duracao);
+        Encomenda encomenda(idm,idvol,volume,peso,recompensa,duracao);
         encomendas.push_back(encomenda);
+
     }
 }
+
+void Empresa::registarCenario(){
+
+        ofstream file;
+        file.open("cenario.txt", ofstream::out | ofstream::trunc);
+        if (!file.is_open()) {
+            cerr << "Ficheiro nao esta disponivel";
+
+            exit(1);
+        }
+
+
+        file <<"idc   " << "ide    " <<"volume " << "peso  " << "recompensa " << "duracao"<<endl;
+
+        for(const auto& encomenda : manifesto){
+
+
+            file << encomenda.getIdm();
+            file << " ";
+            file << encomenda.getIdvol();
+            file << " ";
+            file << encomenda.getVolume();
+            file << " ";
+            file << encomenda.getPeso();
+            file << " ";
+            file << encomenda.getRecompensa();
+            file << " ";
+            file << encomenda.getDuracao();
+
+            file << endl;
+
+        }
+
+
+        file.close();
+
+
+}
+
+void Empresa::registarCarrinhacarga(){
+
+
+       // manifesto
+
+        ofstream file;
+        file.open("carga.txt", ofstream::out | ofstream::trunc);
+        if (!file.is_open()) {
+            cerr << "Ficheiro nao esta disponivel";
+
+            exit(1);
+        }
+
+
+        file <<"id_carrinha " << "volume_total " <<"peso_total " <<endl;
+
+        for(const auto& carrinha : carga){
+
+
+            file << carrinha.getIdCar();
+            file << " ";
+
+            file << carrinha.getVolMax();
+            file << " ";
+            file << carrinha.getPesoMax();
+            file << " ";
+
+            file << endl;
+
+        }
+
+
+        file.close();
+
+
+}
+
 
 queue<Encomenda> Empresa::ordenarEncomendasPorEspaco() {
     multimap<int,Encomenda> mEncomendas;
@@ -48,7 +140,7 @@ queue<Encomenda> Empresa::ordenarEncomendasPorEspaco() {
 
     for(Encomenda encomenda : encomendas) {
         int a = encomenda.getVolume()*encomenda.getPeso();
-        mEncomendas.insert(pair(a,encomenda));
+        mEncomendas.insert(make_pair(a,encomenda));
     }
 
     for(auto encomenda : mEncomendas) {
@@ -58,13 +150,13 @@ queue<Encomenda> Empresa::ordenarEncomendasPorEspaco() {
     return qEncomendas;
 }
 
-vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
+vector<Carrinha>Empresa::ordenarCarrinhasPorCapacidade() {
     multimap<int,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
         int a = carrinha.getPesoMax()*carrinha.getVolMax();
-        mCarrinhas.insert(pair(-a,carrinha));
+        mCarrinhas.insert(make_pair(-a,carrinha));
     }
 
     for(auto carrinha : mCarrinhas) {
@@ -74,13 +166,14 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCapacidade() {
     return estafetas;
 }
 
-queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
+queue<Encomenda>Empresa::ordenarEncomendasPorRecompensa(){
     multimap<double,Encomenda> mEncomendas;
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
         double a = (double) (encomenda.getPeso()*encomenda.getVolume())/encomenda.getRecompensa();
-        mEncomendas.insert(pair(a,encomenda));
+
+        mEncomendas.insert(make_pair(a,encomenda));
     }
 
     for(auto encomenda : mEncomendas) {
@@ -90,13 +183,15 @@ queue<Encomenda> Empresa::ordenarEncomendasPorRecompensa(){
     return qEncomendas;
 }
 
-vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
+vector<Carrinha>Empresa::ordenarCarrinhasPorCusto() {
     multimap<double,Carrinha> mCarrinhas;
     vector<Carrinha> estafetas;
 
     for(Carrinha carrinha : carrinhas) {
-        double a = (double) (carrinha.getVolMax()*carrinha.getPesoMax())/carrinha.getCusto();
-        mCarrinhas.insert(pair(-a,carrinha));
+
+        double a =(double)(carrinha.getVolMax()*carrinha.getPesoMax())/carrinha.getCusto();
+
+        mCarrinhas.insert(make_pair(-a,carrinha));
     }
 
     for(auto carrinha : mCarrinhas) {
@@ -106,13 +201,13 @@ vector<Carrinha> Empresa::ordenarCarrinhasPorCusto() {
     return estafetas;
 }
 
-queue<Encomenda> Empresa::ordenarEncomendasPorDuracao() {
+queue<Encomenda>Empresa::ordenarEncomendasPorDuracao() {
     multimap<int,Encomenda> mEncomendas;
     queue<Encomenda> qEncomendas;
 
     for(Encomenda encomenda : encomendas) {
         int a = encomenda.getDuracao();
-        mEncomendas.insert(pair(a,encomenda));
+        mEncomendas.insert(make_pair(a,encomenda));
     }
 
     for(auto encomenda : mEncomendas) {
@@ -125,10 +220,13 @@ queue<Encomenda> Empresa::ordenarEncomendasPorDuracao() {
 void Empresa::otimizarNumeroEstafetas() {
     queue<Encomenda> qEncomendas = ordenarEncomendasPorEspaco();
     vector<Carrinha> estafetas = ordenarCarrinhasPorCapacidade();
-    int carrinhasUsadas = 0, volume, peso;
+    int carrinhasUsadas = 0, volume, peso, recompensa, duracao;
 
     for(Carrinha carrinha : estafetas) {
         if(qEncomendas.empty()) { break; }
+
+        int t_peso=0;
+        int t_volume=0;
 
         carrinhasUsadas++;
 
@@ -137,15 +235,27 @@ void Empresa::otimizarNumeroEstafetas() {
             volume = carrinha.getVolMax()-encomenda.getVolume();
             peso = carrinha.getPesoMax()-encomenda.getPeso();
 
-            if(volume>=0 && peso>=0) {
+            t_peso=t_peso+encomenda.getPeso();
+            t_volume=t_volume+encomenda.getVolume();
+
+            manifesto.emplace_back(carrinhasUsadas, encomenda.getIdvol(), encomenda.getVolume(), encomenda.getPeso(), encomenda.getRecompensa(), encomenda.getDuracao());
+
+                if(volume>=0 && peso>=0) {
                 carrinha.setVolMax(volume);
                 carrinha.setPesoMax(peso);
                 qEncomendas.pop();
 
             } else { break; }
         }
+           carga.emplace_back(carrinhasUsadas, t_volume, t_peso,0);
+
     }
-    cout << "Foram distribuÃ­das " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas." << endl << "Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << endl;
+    cout << "Foram distribuídas " << (encomendas.size()-qEncomendas.size()) << " encomendas por " << carrinhasUsadas << " estafetas." << endl;
+    cout << "Sobrando " << qEncomendas.size() << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl<<endl;
+
+
+
+
 }
 
 void Empresa::otimizarLucro() {
@@ -156,6 +266,9 @@ void Empresa::otimizarLucro() {
     for(Carrinha carrinha : estafetas) {
         if(qEncomendas.empty()) { break; }
 
+        int t_peso=0;
+        int t_volume=0;
+
         lucro = ganhos-despesas;
         carrinhasUsadas++;
         encomendasCarregadas = 0;
@@ -165,6 +278,12 @@ void Empresa::otimizarLucro() {
             Encomenda encomenda = qEncomendas.front();
             volume = carrinha.getVolMax()-encomenda.getVolume();
             peso = carrinha.getPesoMax()-encomenda.getPeso();
+
+            t_peso=t_peso+encomenda.getPeso();
+            t_volume=t_volume+encomenda.getVolume();
+
+            manifesto.emplace_back(carrinhasUsadas, encomenda.getIdvol(), encomenda.getVolume(), encomenda.getPeso(), encomenda.getRecompensa(), encomenda.getDuracao());
+
 
             if(volume>=0 && peso>=0) {
                 carrinha.setVolMax(volume);
@@ -182,8 +301,12 @@ void Empresa::otimizarLucro() {
             break;
         }
         lucro = ganhos-despesas;
+
+        carga.emplace_back(carrinhasUsadas, t_volume, t_peso,0);
+
     }
-    cout << "Foram distribuÃ­das " << encomendasEntregues << " encomendas por " << carrinhasUsadas << " estafetas." << endl << "Sobrando " << encomendas.size()-encomendasEntregues << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que originou um lucro de " << lucro << "â‚¬." << endl << endl;
+    cout << "Foram distribuídas " << encomendasEntregues << " encomendas por " << carrinhasUsadas << " estafetas." << endl;
+    cout << "Sobrando " << encomendas.size()-encomendasEntregues << " encomendas e ficando " << carrinhas.size()-carrinhasUsadas << " estafetas livres." << endl << "O que originou um lucro de " << lucro << "€." << endl << endl;
 }
 
 void Empresa::otimizarEntregasExpresso() {
@@ -199,9 +322,16 @@ void Empresa::otimizarEntregasExpresso() {
             break;
 
         } else {
+
             viagensFeitas++;
+
+            manifesto.emplace_back(viagensFeitas, encomenda.getIdvol(), encomenda.getVolume(), encomenda.getPeso(), encomenda.getRecompensa(), encomenda.getDuracao());
+
+
             qEncomendas.pop();
         }
     }
-    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << (double)tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00." << endl << "Sobrando entÃ£o " << qEncomendas.size() << " encomendas que irÃ£o ser retornadas ao fornecedor." << endl << endl;
+    cout << "Foram entregues " << viagensFeitas << " encomendas num total de " << (double)tempoDecorrido/3600 << " horas entre as 9:00 e as 17:00." << endl;
+    cout << "Sobrando então " << qEncomendas.size() << " encomendas que irão ser retornadas ao fornecedor." << endl << endl;
 }
+

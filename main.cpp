@@ -3,25 +3,39 @@
 
 void menu(Empresa a) {
     int option;
-    cout << endl << "Logística Urbana para Entrega de Mercadorias" << endl << endl;
-    cout << "1- Cenário 1: otimização do número de estafetas" << endl;
-    cout << "2- Cenário 2: otimização do lucro da empresa" << endl;
-    cout << "3- Cenário 3: otimização das entregas expresso" << endl;
-    cout << "4- Sair" << endl;
+    cout << endl << " Logistica Urbana para Entrega de Mercadorias" <<endl << endl;
+    cout << "1 - Cenario 1: otimizacao do numero de estafetas" << endl;
+    cout << "2 - Cenario 2: otimizacaoo do lucro da empresa" << endl;
+    cout << "3 - Cenario 3: otimizacao das entregas expresso" << endl;
+    cout << "4 - Sair" << endl<<endl;
+    cout << "Opcao: ";
     cin >> option;
     switch (option) {
-        case 1: a.otimizarNumeroEstafetas(); break;
-        case 2: a.otimizarLucro(); break;
-        case 3: a.otimizarEntregasExpresso(); break;
+        case 1: a.otimizarNumeroEstafetas();
+                a.registarCenario();
+                a.registarCarrinhacarga();
+            break;
+        case 2: a.otimizarLucro();
+                a.registarCenario();
+                a.registarCarrinhacarga();
+            break;
+
+        case 3: a.otimizarEntregasExpresso();
+                a.registarCenario();
+                break;
         case 4: return;
-        default: cout << endl << "Resposta inválida. Tente novamente.";
+        default: cout << endl << "Resposta invalida. Tente novamente.";
     }
+    system("pause");
+    system("cls");
     menu(a);
 }
 
+
+
 int main() {
     Empresa a;
-    a.addCarrinhas("dataset/carrinhas.txt");
-    a.addEncomendas("dataset/encomendas.txt");
+    a.addCarrinhas("carrinhas.txt");
+    a.addEncomendas("encomendas.txt");
     menu(a);
 }
